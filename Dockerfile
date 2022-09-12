@@ -1,4 +1,4 @@
 FROM openjdk:8-jdk-alpine
 EXPOSE 3000
-ADD target/rahulgupta.jar rahulgupta.jar
-ENTRYPOINT [ "java","-jar","/rahulgupta.jar" ]
+ADD target/student-management-system-0.0.1-SNAPSHOT.jar student-management-system-0.0.1-SNAPSHOT.jar
+ENTRYPOINT [ "java","-jar","/student-management-system-0.0.1-SNAPSHOT.jar" ]
