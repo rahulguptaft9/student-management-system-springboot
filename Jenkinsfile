@@ -51,5 +51,19 @@ pipeline {
 			}
 		}
 	}
+	  
+	  
+	  stage('k8s deploying in SIT'){
+        steps {
+            sshagent(['sit-cluster']) {
+                script{
+                sh "ssh root@10.10.2.32  kubectl rollout restart deployment rahul -n default"
+                
+                        }
+    
+                    }
+           
+          }
+        } 
   }
   }
