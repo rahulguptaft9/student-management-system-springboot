@@ -7,7 +7,7 @@ pipeline {
         
     stage('Git') {
       steps {
-        git 'https://github.com/rahulguptaft9/student-management-system-springboot.git
+        git 'https://github.com/rahulguptaft9/student-management-system-springboot.git'
       }
     }
      
