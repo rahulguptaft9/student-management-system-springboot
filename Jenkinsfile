@@ -7,7 +7,8 @@ pipeline {
         
     stage('Git') {
       steps {
-        git 'https://github.com/rahulguptaft9/student-management-system-springboot.git'
+        //git branch: 'main', url: 'https://<token>@github.com/username/repoName.git'
+        git branch: 'main', url: 'https://github.com/rahulguptaft9/student-management-system-springboot.git'
       }
     }
      
