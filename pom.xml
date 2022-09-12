@@ -58,6 +58,7 @@
 
 	<build>
 		<plugins>
+			<defaultGoal>package</defaultGoal>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
@@ -72,7 +73,7 @@
             </configuration>
         </plugin>
 		</plugins>
-			<defaultGoal>package</defaultGoal>
+			
 	</build>
 
 </project>
