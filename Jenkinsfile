@@ -14,7 +14,7 @@ pipeline {
      
     stage('Build') {
       steps {
-        sh 'mvn -DskipTests compile'
+        sh 'mvn package'
       }
     }  
     
