@@ -2,6 +2,12 @@ pipeline {
   agent any
     
   tools {maven  "mvn"}
+  
+	environment{
+	registry="mrchelsea"
+	registryCredential='mrchelsea'
+	dockerImage=''
+	}
     
   stages {
         
@@ -24,5 +30,26 @@ pipeline {
         sh './jenkins/scripts/test.sh'
       }
     }*/
+    
+    
+	stage('Building image for both frontend and backend') {
+		steps{
+			script{
+				sh 'docker build -f Dockerfile -t $registry/random .'
+        //sh 'docker build -f Dockerfile1 -t $registry/backend .'
+			}
+		}
+	}
+    
+    /*stage('Registring image for both frontend and backend') {
+		steps{
+			script{
+				docker.withRegistry('',registryCredential){
+				sh 'docker push $registry/random'
+       //	sh 'docker push $registry/backend'
+				}
+			}
+		}
+	}*/
   }
   }
