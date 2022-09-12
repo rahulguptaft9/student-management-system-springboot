@@ -41,7 +41,7 @@ pipeline {
 		}
 	}
     
-    /*stage('Registring image for both frontend and backend') {
+    stage('Registring image for both frontend and backend') {
 		steps{
 			script{
 				docker.withRegistry('',registryCredential){
@@ -50,6 +50,6 @@ pipeline {
 				}
 			}
 		}
-	}*/
+	}
   }
   }
