@@ -54,7 +54,9 @@ pipeline {
 	  
 	  
 	  stage('k8s deploying in SIT'){
-        steps {
+		  try{
+			  retry(3){  
+		  steps {
             sshagent(['sit-cluster']) {
                 script{
                 sh "ssh root@10.10.2.32  kubectl rollout restart deployment rahul -n default"
@@ -65,5 +67,12 @@ pipeline {
            
           }
         } 
+}
+		  catch (e) {
+                currentBuild.result = "FAILURE"
+                println("catch exeption. currentBuild.result: ${currentBuild.result}")
+            }
+		  
+ }	  
   }
   }
