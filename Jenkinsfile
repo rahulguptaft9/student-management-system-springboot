@@ -1,9 +1,7 @@
 pipeline {
   agent any
     
-	options {
-        disableConcurrentBuilds()
-    }
+
 	
   tools {maven  "mvn"}
   
