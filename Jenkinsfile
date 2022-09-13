@@ -54,8 +54,7 @@ pipeline {
 	  
 	  
 	  stage('k8s deploying in SIT'){
-		  try{
-			  retry(3){  
+	
 		  steps {
             sshagent(['sit-cluster']) {
                 script{
@@ -66,13 +65,6 @@ pipeline {
                     }
            
           }
-        } 
-}
-		  catch (e) {
-                currentBuild.result = "FAILURE"
-                println("catch exeption. currentBuild.result: ${currentBuild.result}")
-            }
-		  
- }	  
+        }   
   }
   }
