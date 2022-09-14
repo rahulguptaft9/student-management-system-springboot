@@ -60,7 +60,7 @@ options {
 	  stage('k8s deploying in SIT'){
 	
 		  steps {
-            sshagent(['sit-cluster']) {
+            sshagent(['k8']) {
 		    sh "scp -o StrictHostKeyChecking=no rahul.yaml ubuntu@172.31.46.45:/home/ubuntu"
                 script{
 			try{
