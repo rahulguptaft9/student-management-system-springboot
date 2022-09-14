@@ -36,16 +36,16 @@ options {
     }*/
     
     
-	stage('Building image for both frontend and backend') {
+	/*stage('Building image for both frontend and backend') {
 		steps{
 			script{
 				sh 'docker build -f Dockerfile -t $registry/random .'
         //sh 'docker build -f Dockerfile1 -t $registry/backend .'
 			}
 		}
-	}
+	}*/
     
-    stage('Registring image for both frontend and backend') {
+    /*stage('Registring image for both frontend and backend') {
 		steps{
 			script{
 				docker.withRegistry('',registryCredential){
@@ -54,7 +54,7 @@ options {
 				}
 			}
 		}
-	}
+	}*/
 	  
 	  
 	  stage('k8s deploying in SIT'){
