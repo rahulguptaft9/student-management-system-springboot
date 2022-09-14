@@ -62,7 +62,7 @@ options {
 		  steps {
             sshagent(['sit-cluster']) {
                 script{
-                sh "ssh root@10.10.2.32  kubectl rollout restart deployment rahul -n default"
+                sh "ssh root@172.31.46.45  kubectl rollout restart deployment rahul -n default"
                 
                         }
     
