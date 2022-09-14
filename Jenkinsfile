@@ -61,9 +61,13 @@ options {
 	
 		  steps {
             sshagent(['sit-cluster']) {
+		    sh "scp -o StrictHostKeyChecking=no rahul.yaml root@172.31.26.45:/home/ubuntu"
                 script{
-                sh "ssh root@172.31.46.45  kubectl rollout restart deployment rahul -n default"
-                
+			try{
+                sh "ssh root@172.31.46.45  kubectl apply -f ."
+		}
+			catch{
+				sh "ssh root@172.31.46.45  kubectl create -f ."
                         }
     
                     }
