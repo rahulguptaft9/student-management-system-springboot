@@ -66,7 +66,7 @@ options {
 			try{
                 sh "ssh root@172.31.46.45  kubectl apply -f ."
 		}
-			catch{
+			catch(error){
 				sh "ssh root@172.31.46.45  kubectl create -f ."
                         }
     
