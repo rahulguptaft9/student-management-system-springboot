@@ -61,7 +61,7 @@ options {
 	
 		  steps {
             sshagent(['k8']) {
-		    sh "scp -o StrictHostKeyChecking=no rahul.yaml ubuntu@172.31.46.45:/home/ubuntu"
+		   // sh "scp -o StrictHostKeyChecking=no rahul.yaml ubuntu@172.31.46.45:/home/ubuntu"
                 script{
 			try{
                 sh "ssh ubuntu@172.31.46.45  kubectl apply -f ."
