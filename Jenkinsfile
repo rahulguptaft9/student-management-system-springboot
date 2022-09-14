@@ -22,11 +22,11 @@ options {
       }
     }
      
-    stage('Build') {
+    /*stage('Build') {
       steps {
         sh 'mvn package'
       }
-    }  
+    }  */
     
             
     /*stage('Test') {
