@@ -64,10 +64,10 @@ options {
 		  //sh "scp -o StrictHostKeyChecking=no rahul.yaml ubuntu@172.31.46.45:/home/ubuntu"
                 script{
 			try{
-                sh "ssh ubuntu@172.31.46.45  kubectl apply -f ."
+                sh "ssh root@10.10.7.73  kubectl apply -f ."
 		}
 			catch(error){
-				sh "ssh ubuntu@172.31.46.45 kubectl create -f ."
+				sh "ssh root@10.10.7.73 kubectl create -f ."
                         }
     
                     }
