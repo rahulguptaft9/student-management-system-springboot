@@ -1,1 +1,27 @@
-HI
+name: Java CI
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Java JDK
+      uses: actions/setup-java@v2
+      with:
+        java-version: '11' # Change this to the appropriate Java version for your project
+
+    - name: Build and test
+      run: |
+        ./mvnw package # Adjust this command based on the build tool used in the project (e.g., Gradle)
+
+    # Add more steps here if you want to deploy or perform additional tasks after the build.
+
