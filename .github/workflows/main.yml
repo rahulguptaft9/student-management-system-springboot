@@ -19,7 +19,7 @@ jobs:
       with:
         java-version: '11'
         distribution: 'adopt'
-        cache: gradle
+        cache: maven
     - name: Build and test
       run: |
         ./mvnw package # Adjust this command based on the build tool used in the project (e.g., Gradle)
